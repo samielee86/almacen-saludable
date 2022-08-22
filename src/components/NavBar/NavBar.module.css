@@ -1,0 +1,34 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #145A32;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: antiquewhite;
+}
+
+.navUl {
+    list-style: none;
+    display: flex;
+}
+
+.navTitle {
+    padding: 15px;
+}
+
+.navUlLi {
+    margin: 0px 10px;
+    font-size:small;
+    font-weight: bold;
+}
+
+.navUlLi a{
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.cartWidget {
+    color: antiquewhite;
+    padding: 10px;
+}
