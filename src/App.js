@@ -9,7 +9,7 @@ const App = () => {
             <NavBar/>
         </header>
         <main>
-          <ItemListContainer greeting="Saludos!"/>
+          <ItemListContainer saludo="Bienvenidos!"/>
         </main>
         <footer>Footer</footer>
     </>
