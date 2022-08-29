@@ -5,8 +5,8 @@ import ItemCount from './components/itemCount/itemCount'
 
 const App = () => {
 
-  const onAdd = () => {
-    console.log('Hola! soy la funcion onAdd')
+  const onAdd = (qty) => {
+    alert(`Se agregaron ${qty} productos al carrito`)
   }
 
   return (
