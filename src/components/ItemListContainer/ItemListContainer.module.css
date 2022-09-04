@@ -3,3 +3,9 @@
     justify-content: center;
     background-color: #D8E5DB;
 }
+
+.listedItems {
+    display: flex;
+    justify-content: space-between;
+    border: 1px black;
+}

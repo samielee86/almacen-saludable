@@ -1,12 +1,13 @@
 import React from 'react'
 import Item from '../Item/Item'
+import ItemLists from './ItemList.module.css'
 
 
-const ItemList = ({items}) => {
+const ItemList = (items) => {
     
     return (
-        <div>
-           {items.map((item)=> <Item item={item} key={item.id}/>)}
+        <div className={ItemLists}>
+           {items.items.map((item)=> <Item item={item} key={item.id}/>)}
         </div>
   )
   }
