@@ -1,23 +1,19 @@
 import React from 'react'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
-import ItemCount from '../itemCount/itemCount'
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+import Cart from '../Cart/Cart'
+import {Route, Routes} from 'react-router-dom'
 
 const Main = () => {
-    const onAdd = (qty) => {
-        alert(`Se agregaron ${qty} productos al carrito`)
-      }
+
   return (
-    <>
-        <ItemListContainer title="Productos Destacados"/>
-        <ItemDetailContainer/>
-        <ItemCount 
-            stock={10}
-            initial={1}
-            onAdd={onAdd}
-        />
-    </>
-  )
-}
+    <Routes>
+        <Route path='/' element={<ItemListContainer title="Productos Destacados"/>}/>
+        <Route path='/category/:categoryName' element={<ItemListContainer title="Productos Destacados"/>}/>
+        <Route path='/cart' element={ <Cart /> }/>
+        <Route path='/detail/:idProd' element={<ItemDetailContainer />}/>
+    </Routes>
+  );
+};
 
 export default Main;

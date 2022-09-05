@@ -14,15 +14,15 @@
 
 .navTitle {
     padding: 15px;
+    color: antiquewhite;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .navUlLi {
     margin: 0px 10px;
     font-size:small;
     font-weight: bold;
-}
-
-.navUlLi a{
     color: antiquewhite;
     text-decoration: none;
 }
