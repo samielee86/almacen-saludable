@@ -10,23 +10,24 @@ const ItemDetailContainer = () => {
         alert(`Se agregaron ${qty} productos al carrito`)}
 
     const [item, setItem] = useState({})
-    const idProd = Number(useParams())
+    const { idProd } = useParams();
 
     useEffect( ()=>{
-        const getProduct = () => new Promise((res,rej)=>{
-            const product = products.find( prod => prod.id === idProd)
+        const getProduct = () => 
+            new Promise((res, rej)=>{
+                const product = products.find( (prod) => prod.id === Number(idProd))
             setTimeout( () => {
                 res(product);
             }, 2000);
         });
 
         getProduct()
-        .then((data)=>{
-            setItem(data);
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+            .then((data)=>{
+                setItem(data);
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
     }, [idProd])
 
     return(

@@ -9,12 +9,12 @@ const ItemListContainer = (props) => {
     const [items, setItems] = useState([])
     const { categoryName } = useParams();
 
-    useEffect(()=>{
+    useEffect( ()=>{
         const getProducts = () =>
             new Promise((res, rej) => {
                 const prodFiltrados = products.filter( (prod)=> prod.category === categoryName )
             setTimeout( () => {
-                res(categoryName? prodFiltrados : products);
+                res(categoryName ? prodFiltrados : products);
             }, 2000);
         });
 
