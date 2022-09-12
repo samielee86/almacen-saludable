@@ -1,11 +1,3 @@
 .h2 {
-    display: flex;
-    justify-content: center;
-    background-color: #D8E5DB;
-}
-
-.listedItems {
-    display: flex;
-    justify-content: space-between;
-    border: 1px black;
+    font-size: 30px;
 }

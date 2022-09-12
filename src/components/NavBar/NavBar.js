@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <>
         <nav className={styles.navContainer} >
-                <Link to='/'><h2 className={styles.navTitle}>ALMACEN SALUDABLE</h2></Link>
+                <Link to='/' className={styles.navTitle}><h2 >ALMACEN SALUDABLE</h2></Link>
                 <ul className= {styles.navUl}>
                         <Link to="/category/aceites" className={styles.navUlLi}>ACEITES</Link>
                         <Link to="/category/frutos-secos" className={styles.navUlLi}>FRUTOS SECOS</Link>

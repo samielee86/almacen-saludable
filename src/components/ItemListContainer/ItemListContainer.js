@@ -30,7 +30,7 @@ const ItemListContainer = (props) => {
     return (
         <div>
             <h2 className={styles.h2}>{props.title}</h2>
-            <div><ItemList items={items} /></div>
+            <ItemList items={items}/>
             
         </div>
     );

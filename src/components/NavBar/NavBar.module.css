@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: #145A32;
-    padding: 10px;
-    color: antiquewhite;
+    padding: 5px;
+    color: rgb(255, 250, 244);
+    margin: 20px auto 20px auto;
 }
 
 .navUl {
@@ -14,21 +15,22 @@
 
 .navTitle {
     padding: 15px;
-    color: antiquewhite;
+    color: rgb(255, 250, 244);
     font-weight: bold;
     text-decoration: none;
+    margin-left: 50px;
 }
 
 .navUlLi {
     margin: 0px 10px;
     font-size:small;
     font-weight: bold;
-    color: antiquewhite;
+    color: rgb(255, 250, 244);
     text-decoration: none;
 }
 
 .cartWidget {
-    color: antiquewhite;
+    color: rgb(255, 250, 244);
     padding: 10px;
-    margin-right: 10px;
+    margin-right: 30px;
 }

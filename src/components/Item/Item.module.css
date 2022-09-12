@@ -1,0 +1,106 @@
+.itemCard {
+    display: flex;
+    max-width: 500px;
+    margin: 0px 0px 20px 0px;
+    padding: 0px 90px 80px 0px;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    border: solid #DCE4DD 1px;
+    width: 300px;
+    height: 200px;
+    padding-left: 20px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.img {
+    position: absolute;
+    width: 250px;
+    height: fit-content;
+    bottom: 0;
+    right: 0;
+}
+
+.offers{
+    background-color: #23864e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 7px 15px 7px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: rgb(255, 250, 244);
+}
+
+.title {
+    font-size: 21px;
+    font-weight: bold;
+    color: inherit;
+    margin: 43px 0px 5px;
+    max-width: 155px;
+}
+
+
+.priceContainer{
+    position: absolute;
+    bottom: 40px;
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2ba35f;
+}
+
+.priceContainer span{
+    font-size: 13px;
+    color: #AAB5AF;
+}
+
+.starContainer{
+    height: auto;
+}
+
+.yellowStar {
+    color: #F6DD2B;
+    font-size: 18px;
+}
+
+.greyStar {
+    color:#AAB5AF;
+    font-size: 18px;
+}
+
+.favoriteCart{
+    position: absolute;
+    bottom: -16px;
+    left: 43px;
+
+}
+
+.favoriteCart span{
+    font-size: 21px;
+    color: #AAB5AF;
+    padding: 5px;
+}
+
+.heart {
+    background-color: white;
+    border-radius: 5px 0px 0px 5px;
+    border-color: #DCE4DD;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+}
+
+.addShoppingCart {
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    border-color: #DCE4DD;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+}
