@@ -1,15 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount.js'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({item}) => {
-
     const [qty, setQty] = useState(0)
-
+    const { cart, addItem } = useContext(CartContext);
     const onAdd = (q) => {
         setQty(q);
-    }
+        addItem(item, q);
+    };
 
+    console.log(cart)
+    
     return (
         <>
             <div>
@@ -23,15 +26,12 @@ const ItemDetail = ({item}) => {
                 stock={item.stock}
                 initial={1}
                 onAdd={onAdd}
-            />
-            ) : (
+                />
+                ) : (
                 <Link to="/cart">Go to Cart</Link>
-            )
-                
-
+                )
             }
         </>
-        
     );
 };
 

@@ -15,7 +15,7 @@ const Main = () => {
             <ItemListContainer title="Productos Destacados"/>
           </>
         }/>
-        <Route path='/category/:categoryName' element={<ItemListContainer title="Productos Destacados"/>}/>
+        <Route path='/category/:categoryName' element={<ItemListContainer title="Categoria"/>}/>
         <Route path='/cart' element={ <Cart /> }/>
         <Route path='/detail/:idProd' element={<ItemDetailContainer />}/>
     </Routes>

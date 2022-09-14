@@ -17,8 +17,8 @@ const Item = ({item}) => {
           </div>
           <h5 className={styles.priceContainer}><span>$</span>{item.price}  <span>  500gr</span></h5>
           <div className={styles.favoriteCart}>
-            <button className={styles.heart}><span class="material-icons">favorite_border</span></button>
-            <button className={styles.addShoppingCart}><span class="material-icons">add_shopping_cart</span></button>
+            <button className={styles.heart}><span className="material-icons">favorite_border</span></button>
+            <button className={styles.addShoppingCart}><span className="material-icons">add_shopping_cart</span></button>
           </div>
         </div>
         <div className={styles.img}>
