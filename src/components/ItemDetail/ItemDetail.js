@@ -5,13 +5,14 @@ import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({item}) => {
     const [qty, setQty] = useState(0)
-    const { cart, addItem } = useContext(CartContext);
+    const { /*cart*/ addItem, getQty } = useContext(CartContext);
     const onAdd = (q) => {
         setQty(q);
         addItem(item, q);
     };
-
-    console.log(cart)
+    // console.log(cart)
+    
+    const qtyInCart = getQty(item.id)
     
     return (
         <>
@@ -24,7 +25,7 @@ const ItemDetail = ({item}) => {
             { qty === 0 ? (
                 <ItemCount 
                 stock={item.stock}
-                initial={1}
+                initial={qtyInCart}
                 onAdd={onAdd}
                 />
                 ) : (

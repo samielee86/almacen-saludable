@@ -1,9 +1,15 @@
+import { useContext} from 'react';
 import styles from './NavBar.module.css'
+import { CartContext } from '../../context/CartContext'
 
 export const CartWidget = () => {
+    const { totalQty } = useContext(CartContext)
     return(
-        <span className={`material-symbols-outlined ${styles.cartWidget}`}>
-            shopping_cart
-        </span>
+        <div className={styles.cartWidget}>
+            <span className={"material-symbols-outlined"}>
+                shopping_cart
+            </span>
+            <span>{totalQty() === 0 ? '' : totalQty()}</span>
+        </div>
     )
 };
