@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import products from '../../mock/products'
+//import products from '../../mock/products'
 import { useParams } from 'react-router-dom'
-//import { db } from '../../firebaseConfig'
-//import { doc, getDoc, collection } from 'firebase/firestore'
+import { db } from '../../firebaseConfig'
+import { doc, getDoc, collection } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
@@ -12,30 +12,16 @@ const ItemDetailContainer = () => {
 
     useEffect( ()=>{
 
-        // const productCollection = collection(db, 'products')
-        // const ref = doc( productCollection, idProd)
-        // getDoc(ref)
-        // .then((res)=>{
-        //     setItem({
-        //         id: res.id,
-        //         ...res.data()
-        //     })
-        // });
-        const getProduct = () => 
-            new Promise((res, rej)=>{
-                const product = products.find( (prod) => prod.id === Number(idProd))
-            setTimeout( () => {
-                res(product);
-            }, 1000);
+        const productCollection = collection(db, 'products')
+        const ref = doc(productCollection, idProd)
+        getDoc(ref)
+        .then((res)=>{
+            setItem({
+                id: res.id,
+                ...res.data()
+            });
         });
-
-        getProduct()
-            .then((data)=>{
-                setItem(data);
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+        
     }, [idProd])
 
     return(
@@ -47,3 +33,19 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
+
+// const getProduct = () => 
+//             new Promise((res, rej)=>{
+//                 const product = products.find( (prod) => prod.id === Number(idProd))
+//             setTimeout( () => {
+//                 res(product);
+//             }, 1000);
+//         });
+
+//         getProduct()
+//             .then((data)=>{
+//                 setItem(data);
+//             })
+//             .catch((error)=>{
+//                 console.log(error)
+//             })

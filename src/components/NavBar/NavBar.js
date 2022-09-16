@@ -10,7 +10,7 @@ const NavBar = () => {
                 <Link to='/' className={styles.navTitle}><h2 >ALMACEN SALUDABLE</h2></Link>
                 <ul className= {styles.navUl}>
                         <Link to="/category/aceites" className={styles.navUlLi}>ACEITES</Link>
-                        <Link to="/category/frutos-secos" className={styles.navUlLi}>FRUTOS SECOS</Link>
+                        <Link to="/category/frutossecos" className={styles.navUlLi}>FRUTOS SECOS</Link>
                         <Link to="/category/sal" className={styles.navUlLi}>SAL</Link>
                         <Link to="/category/miel" className={styles.navUlLi}>MIEL</Link>
                         <Link to="/category/cookies" className={styles.navUlLi}>COOKIES</Link>
