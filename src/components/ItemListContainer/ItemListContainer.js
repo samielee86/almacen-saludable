@@ -10,9 +10,9 @@ const ItemListContainer = (props) => {
 
     const [items, setItems] = useState([])
     const { categoryName } = useParams();
+    const [loading, setLoading] = useState(true)
 
     useEffect( ()=>{
-
         // const productCollection = collection(db, "products");
         // const q = query(productCollection, where('category', '==', categoryName)); // hacer if/else igual que antes para mostrar todos o solo filtrados
         // getDocs(q)
@@ -33,7 +33,7 @@ const ItemListContainer = (props) => {
         // // .finally(()=>{
         // //     //setIsLoading
         // // })
-
+        
         const getProducts = () =>
             new Promise((res, rej) => {
                 const prodFiltrados = products.filter( (prod)=> prod.category === categoryName )
@@ -41,20 +41,32 @@ const ItemListContainer = (props) => {
                 res(categoryName ? prodFiltrados : products);
             }, 1000);
         });
-
         getProducts()
             .then((data)=>{
                 setItems(data);
             })
             .catch((error) => {
                 console.log(error);
+            }).finally(() => {
+                setLoading(false)
             })
+            
+        return () => {
+            setLoading(true);
+        }
     }, [categoryName])
     
     return (
         <div>
-            <h2 className={styles.h2}>{props.title}</h2>
-            <ItemList items={items}/>
+            {loading ? (
+                <h2>Loading...</h2>
+            ) : (
+                <>
+                    <h2 className={styles.h2}>{props.title}</h2>
+                    <ItemList items={items}/>
+                </>
+            )
+            }
             
         </div>
     );

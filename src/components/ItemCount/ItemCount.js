@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
     const [qty, setQty] = useState(initial)
+    
+    useEffect(() => {
+        setQty(initial);
+    }, [initial])
 
     const add = () => {
         qty < stock && setQty(qty + 1);
