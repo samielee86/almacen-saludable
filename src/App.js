@@ -14,7 +14,7 @@ const App = () => {
             <header>
                 <NavBar/>
             </header>
-            <Main/>
+            <Main />
             <footer>Footer</footer>
         </div>
       </BrowserRouter>

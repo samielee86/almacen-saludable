@@ -14,7 +14,8 @@ const ItemListContainer = (props) => {
 
     useEffect( ()=>{
         const productCollection = collection(db, "products");
-        const productsToShow = !categoryName ? productCollection : query(productCollection, where('category', '==', categoryName))
+        const productsToShow = categoryName ? query(productCollection, where('category', '==', categoryName)) : productCollection
+        //const productsToShow = !categoryName ? productCollection : query(productCollection, where('category', '==', categoryName))
         getDocs(productsToShow)
         .then((res) => {
              const products = res.docs.map((product) =>{
@@ -33,9 +34,9 @@ const ItemListContainer = (props) => {
         .finally(()=>{
             setLoading(false);
         })
-        
+
     }, [categoryName])
-    
+
     return (
         <div>
             {loading ? (
@@ -47,7 +48,7 @@ const ItemListContainer = (props) => {
                 </>
             )
             }
-            
+
         </div>
     );
 }
