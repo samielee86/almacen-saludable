@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom';
+import styles from './Cart.module.css'
 
 const Cart = () => {
   const { cart, removeItem, clear, totalPrice } = useContext(CartContext)
@@ -15,25 +16,32 @@ const Cart = () => {
     </div>
   )}
   return (
-    
-    <div>
-      {cart.map((prod)=> (
-      <div key={prod.id} 
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          border: '1px solid black'
-          }}>
-        <h3>{prod.title}</h3>
-        <img src={prod.img} alt="" width="100"/>
-        <h5>Cant: {prod.qty}</h5>
-        <h5>Subtotal: $ {prod.price * prod.qty}</h5>
-        <button onClick={() => removeItem(prod.id)}>Eliminar</button>
+    <section className={styles.mainContainer}>
+      <div className={styles.container}>
+        <div>
+          {cart.map((prod)=> (
+          <div key={prod.id} className={styles.itemsContainer}>
+            <div className={styles.productoContainer}>
+              <img src={prod.img} alt="" width="100"/>
+              <h3>{prod.title}</h3>
+            </div>
+            <h5>${prod.price}</h5>
+            <h5>Cant: {prod.qty}</h5>
+            <h5>Subtotal: $ {prod.price * prod.qty}</h5>
+            <button onClick={() => removeItem(prod.id)} className={styles.delButton}><span className="material-symbols-outlined">delete</span></button>
+          </div>
+        ))}
+        </div>
+        <button onClick={() => clear()} className={styles.clearBuyButton} >Eliminar Carrito</button>
       </div>
-      ))}
-      <h3>Total: ${totalPrice()}</h3>
-      <button onClick={() => clear()}>Clear Cart</button>
-    </div>
+        <div className={styles.totalContainer}>
+          <div>
+            <h3>Total:</h3>
+            <h5 className={styles.priceContainer}><span>$</span>{totalPrice()}</h5>
+          </div>
+          <button className={styles.clearBuyButton}>Comprar</button>
+        </div>
+    </section>
   )
 }
 

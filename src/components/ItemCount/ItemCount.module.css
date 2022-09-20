@@ -1,0 +1,63 @@
+.counter {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ margin: 10px 0px;
+}
+
+.addSubs {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 0px;
+    align-items: center;
+    padding: 1px 11px;
+    color: #656665;
+    font-weight: bold;
+}
+
+.addSubs:hover {
+    transform: scale(1.4);
+    color: #23864e;
+    background-color: transparent;
+    font-weight:500
+}
+
+.qty {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    width: 30px;
+    align-items: center;
+    font-weight: bold;
+    color: #23864e;
+}
+
+.addButton {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #DCE4DD;
+    font-size: 14px;
+    padding: 5px 20px 5px 20px;
+    margin: 0px 10px;
+    height: 30px;
+    font-weight: bold;
+    color: #656665;
+    width: 300px;
+}
+
+.addButton:hover {
+    background-color: #23864e;
+    transform: scale(1.05);
+    color: rgb(255, 250, 244);
+}
+
+.addSubsContainer {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: 1px solid #DCE4DD;
+    margin: 0px 10px;
+    width: 200px;
+}
+
