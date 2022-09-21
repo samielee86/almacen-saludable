@@ -4,13 +4,13 @@ import { db } from '../../firebaseConfig'
 
 const Form = ({cart, total, clear, handleOrderID }) => {
     const [name, setName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const order = {
-            buyer: {name, lastName, email},
+            buyer: {name, phone, email},
             cart: cart,
             total: total,
             date: serverTimestamp()
@@ -30,8 +30,8 @@ const Form = ({cart, total, clear, handleOrderID }) => {
     const handleNameChange = (e) => {
         setName(e.target.value);
     }
-    const handleLastNameChange = (e) => {
-        setLastName(e.target.value);
+    const handlePhoneChange = (e) => {
+        setPhone(e.target.value);
     }
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -49,10 +49,10 @@ const Form = ({cart, total, clear, handleOrderID }) => {
             />
             <input
                 type="text"
-                placeholder='Apellido'
-                name="lastName"
-                value={lastName}
-                onChange={handleLastNameChange}
+                placeholder='Nro. Tel/Móvil'
+                name="phone"
+                value={phone}
+                onChange={handlePhoneChange}
             />
             <input
                 type="text"
