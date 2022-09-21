@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom';
 import styles from './Cart.module.css'
@@ -6,6 +6,24 @@ import Form from '../Form/Form'
 
 const Cart = () => {
   const { cart, removeItem, clear, totalPrice } = useContext(CartContext)
+  const [orderID, setOrderID] = useState('')
+
+  const total= totalPrice();
+
+  const handleOrderID = (id) =>{
+    setOrderID(id)
+  }
+
+  if(orderID) {
+    return (<div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems:'center'
+    }}>
+      <h3>Gracias por tu compra! El código de la orden es: {orderID}</h3>
+    </div>
+  )}
+
   if (cart.length === 0 ) {
     return (<div style={{
       display: 'flex',
@@ -16,6 +34,7 @@ const Cart = () => {
       <Link to='/'><h2>Ir a la tienda</h2></Link>
     </div>
   )}
+
   return (
     <section className={styles.mainContainer}>
       <div className={styles.container}>
@@ -38,10 +57,10 @@ const Cart = () => {
         <div className={styles.totalContainer}>
           <div>
             <h3>Total:</h3>
-            <h5 className={styles.priceContainer}><span>$</span>{totalPrice()}</h5>
+            <h5 className={styles.priceContainer}><span>$</span>{total}</h5>
           </div>
           <button className={styles.clearBuyButton}>Comprar</button>
-          <Form />
+          <Form cart={cart} total={total} clear={clear} handleOrderID={handleOrderID}/>
         </div>
     </section>
   )
