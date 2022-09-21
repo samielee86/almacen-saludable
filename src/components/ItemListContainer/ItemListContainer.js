@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import styles from './ItemListContainer.module.css'
-//import products from '../../mock/products'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, query, where } from 'firebase/firestore'
@@ -14,19 +13,16 @@ const ItemListContainer = (props) => {
 
     useEffect( ()=>{
         const productCollection = collection(db, "products");
-        const productsToShow = categoryName ? query(productCollection, where('category', '==', categoryName)) : productCollection
-        //const productsToShow = !categoryName ? productCollection : query(productCollection, where('category', '==', categoryName))
+        const productsToShow = categoryName ? query(productCollection, where('category', '==', categoryName)) : productCollection;
         getDocs(productsToShow)
         .then((res) => {
              const products = res.docs.map((product) =>{
                  return {
-                     id: product.id,    // como el id no esta en data(), se saca de la propiedad del objeto product
-                     ...product.data(), // data() es un metodo de firestore que muestra los datos del producto
+                     id: product.id,
+                     ...product.data(),
                  }
              });
              setItems(products);
-             //console.log(res)
-             //console.log(res.docs)
          })
         .catch((error)=>{
             console.log(error)
@@ -54,21 +50,3 @@ const ItemListContainer = (props) => {
 }
 
 export default ItemListContainer;
-
-
-// const getProducts = () =>
-        //     new Promise((res, rej) => {
-        //         const prodFiltrados = products.filter( (prod)=> prod.category === categoryName )
-        //     setTimeout( () => {
-        //         res(categoryName ? prodFiltrados : products);
-        //     }, 1000);
-        // });
-        // getProducts()
-        //     .then((data)=>{
-        //         setItems(data);
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //     }).finally(() => {
-        //         setLoading(false)
-        //     })

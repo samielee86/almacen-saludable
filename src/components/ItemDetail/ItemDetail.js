@@ -6,15 +6,14 @@ import styles from './ItemDetail.module.css'
 
 const ItemDetail = ({item}) => {
     const [qty, setQty] = useState(0)
-    const { /*cart*/ addItem, getQty } = useContext(CartContext);
+    const { addItem, getQty } = useContext(CartContext);
     const onAdd = (q) => {
         setQty(q);
         addItem(item, q);
     };
-    // console.log(cart)
-    
+
     const qtyInCart = getQty(item.id)
-    
+
     return (
         <div className={styles.container}>
             <div className={styles.itemContainer}>
@@ -26,7 +25,7 @@ const ItemDetail = ({item}) => {
                     <span>{item.description}</span>
                     <h5 className={styles.priceContainer}><span>$</span>{item.price}</h5>
                     { qty === 0 ? (
-                        <ItemCount 
+                        <ItemCount
                         stock={item.stock}
                         initial={qtyInCart}
                         onAdd={onAdd}

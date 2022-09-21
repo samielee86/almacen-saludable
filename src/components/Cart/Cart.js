@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom';
 import styles from './Cart.module.css'
+import Form from '../Form/Form'
 
 const Cart = () => {
   const { cart, removeItem, clear, totalPrice } = useContext(CartContext)
@@ -40,6 +41,7 @@ const Cart = () => {
             <h5 className={styles.priceContainer}><span>$</span>{totalPrice()}</h5>
           </div>
           <button className={styles.clearBuyButton}>Comprar</button>
+          <Form />
         </div>
     </section>
   )
