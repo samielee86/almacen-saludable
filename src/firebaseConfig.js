@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB3QXXRZYeiCCbReOG_17jyNe0GPZP7lL4",
-  authDomain: "almacen-saludable-99f2e.firebaseapp.com",
-  projectId: "almacen-saludable-99f2e",
-  storageBucket: "almacen-saludable-99f2e.appspot.com",
-  messagingSenderId: "1035146244239",
-  appId: "1:1035146244239:web:018c3bae581d82f05bc0fa"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 
