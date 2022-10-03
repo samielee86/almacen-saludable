@@ -31,7 +31,7 @@ const Cart = () => {
       alignItems:'center'
     }}>
       <h3>Tu carrito de compras está vacío!</h3>
-      <Link to='/'><h2>Ir a la tienda</h2></Link>
+      <Link to='/'><button className={styles.clearButton}>Ir a la tienda</button></Link>
     </div>
   )}
 
@@ -41,10 +41,10 @@ const Cart = () => {
         <div>
           {cart.map((prod)=> (
           <div key={prod.id} className={styles.itemsContainer}>
-            <div className={styles.productoContainer}>
+            <Link to={`/detail/${prod.id}`} className={styles.productoContainer}>
               <img src={prod.img} alt="" width="100"/>
               <h3>{prod.title}</h3>
-            </div>
+            </Link>
             <h5>${prod.price}</h5>
             <h5>Cant: {prod.qty}</h5>
             <h5>Subtotal: $ {prod.price * prod.qty}</h5>
@@ -52,14 +52,16 @@ const Cart = () => {
           </div>
         ))}
         </div>
-        <button onClick={() => clear()} className={styles.clearBuyButton} >Eliminar Carrito</button>
+        <button onClick={() => clear()} className={styles.clearButton} >Eliminar Carrito</button>
       </div>
         <div className={styles.totalContainer}>
           <div>
-            <h3>Total:</h3>
-            <h5 className={styles.priceContainer}><span>$</span>{total}</h5>
+            <h3>Resumen de tu compra</h3>
+            <span className={styles.total}>
+              <h4>Total: </h4>
+              <h5 className={styles.priceContainer}><span>$</span>{total}</h5>
+            </span>
           </div>
-          <button className={styles.clearBuyButton}>Comprar</button>
           <Form cart={cart} total={total} clear={clear} handleOrderID={handleOrderID}/>
         </div>
     </section>

@@ -1,6 +1,7 @@
 import React from 'react'
-import NavBar from './components/NavBar/NavBar'
 import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 import { BrowserRouter } from 'react-router-dom'
 import CartProvider from './context/CartContext'
 import './index.css'
@@ -10,11 +11,9 @@ const App = () => {
     <CartProvider>
       <BrowserRouter>
         <div className="wrapper-site">
-            <header>
-                <NavBar/>
-            </header>
+            <Header />
             <Main />
-            <footer>Footer</footer>
+            <Footer />
         </div>
       </BrowserRouter>
     </CartProvider>

@@ -14,7 +14,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
     }
 
     const subtract = () => {
-        qty > initial && setQty(qty - 1);
+        qty > 1 && setQty(qty - 1);
     }
 
     return (

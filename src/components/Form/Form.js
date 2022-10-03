@@ -1,6 +1,7 @@
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { db } from '../../firebaseConfig'
+import styles from './Form.module.css'
 
 const Form = ({cart, total, clear, handleOrderID }) => {
     const [name, setName] = useState('');
@@ -38,32 +39,30 @@ const Form = ({cart, total, clear, handleOrderID }) => {
     }
 
   return (
-    <div>
-        <form action="" onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder='Nombre'
-                name="name"
-                value={name}
-                onChange={handleNameChange}
-            />
-            <input
-                type="text"
-                placeholder='Nro. Tel/Móvil'
-                name="phone"
-                value={phone}
-                onChange={handlePhoneChange}
-            />
-            <input
-                type="text"
-                placeholder='E-mail'
-                name="email"
-                value={email}
-                onChange={handleEmailChange}
-            />
-            <button>Enviar</button>
-        </form>
-    </div>
+    <form action="" onSubmit={handleSubmit} className={styles.container}>
+        <input
+            type="text"
+            placeholder='Nombre'
+            name="name"
+            value={name}
+            onChange={handleNameChange}
+        />
+        <input
+            type="text"
+            placeholder='Nro. Tel/Móvil'
+            name="phone"
+            value={phone}
+            onChange={handlePhoneChange}
+        />
+        <input
+            type="text"
+            placeholder='E-mail'
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+        />
+        <button className={styles.buyButton}>Comprar</button>
+    </form>
   )
 }
 

@@ -5,12 +5,12 @@
 }
 
 .container {
-
+    display: flex;
+    justify-content: center;
 }
 
 .itemContainer{
     display: flex;
-    justify-content: space-evenly;
     border: solid #DCE4DD 1px;
     max-width: 1000px;
     padding: 20px;
