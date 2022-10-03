@@ -7,25 +7,31 @@ const Form = ({cart, total, clear, handleOrderID }) => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const [repEmail, setRepEmail] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        const order = {
-            buyer: {name, phone, email},
-            cart: cart,
-            total: total,
-            date: serverTimestamp()
-        }
-        const ordersCollection = collection(db, "orders")
+        if (email === repEmail) {
+            e.preventDefault();
+            const order = {
+                buyer: {name, phone, email},
+                cart: cart,
+                total: total,
+                date: serverTimestamp()
+            }
+            const ordersCollection = collection(db, "orders")
 
-        addDoc(ordersCollection, order)
-        .then((res)=>{
-            handleOrderID(res.id)
-            clear();
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+            addDoc(ordersCollection, order)
+            .then((res)=>{
+                handleOrderID(res.id)
+                clear();
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        }else{
+            e.preventDefault();
+            alert('Los e-mails ingresados no coinciden')
+        }
     }
 
     const handleNameChange = (e) => {
@@ -36,6 +42,9 @@ const Form = ({cart, total, clear, handleOrderID }) => {
     }
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
+    }
+    const handleRepEmailChange = (e) => {
+        setRepEmail(e.target.value);
     }
 
   return (
@@ -48,18 +57,25 @@ const Form = ({cart, total, clear, handleOrderID }) => {
             onChange={handleNameChange}
         />
         <input
-            type="text"
+            type="number"
             placeholder='Nro. Tel/Móvil'
             name="phone"
             value={phone}
             onChange={handlePhoneChange}
         />
         <input
-            type="text"
+            type="email"
             placeholder='E-mail'
             name="email"
             value={email}
             onChange={handleEmailChange}
+        />
+        <input
+            type="email"
+            placeholder='Repetir E-mail'
+            name="repEmail"
+            value={repEmail}
+            onChange={handleRepEmailChange}
         />
         <button className={styles.buyButton}>Comprar</button>
     </form>

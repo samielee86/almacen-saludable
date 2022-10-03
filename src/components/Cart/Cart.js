@@ -20,7 +20,7 @@ const Cart = () => {
       flexDirection: 'column',
       alignItems:'center'
     }}>
-      <h3>Gracias por tu compra! El código de la orden es: {orderID}</h3>
+      <h3>Gracias por elegirnos! El código de tu compra es: {orderID}</h3>
     </div>
   )}
 
@@ -56,7 +56,7 @@ const Cart = () => {
       </div>
         <div className={styles.totalContainer}>
           <div>
-            <h3>Resumen de tu compra</h3>
+            <h3>Proceder a la compra</h3>
             <span className={styles.total}>
               <h4>Total: </h4>
               <h5 className={styles.priceContainer}><span>$</span>{total}</h5>
