@@ -9,7 +9,7 @@
 
 ## Levantar el proyecto localmente
 
-### `git clone https://github.com/samielee86/almacen-saludable.git`
+### ```git clone https://github.com/samielee86/almacen-saludable.git```
 
 ### `npm install`
 
