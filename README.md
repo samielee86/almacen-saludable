@@ -2,8 +2,8 @@
 
 #### Este proyecto fue desarrollado para la entrega final del curso de React.
 
-- Es un e-commerce desarrollado en React.
-- La base de datos almacenada en Firebase.
+- E-commerce desarrollado en React.
+- Base de datos almacenada en Firebase.
 
 ## Proyecto deployado
 
