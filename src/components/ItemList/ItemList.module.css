@@ -1,9 +1,11 @@
 .itemLists {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 @media (max-width: 839px) {
-    justify-content: center;
+	.itemLists {
+		justify-content: center;
+	}
 }

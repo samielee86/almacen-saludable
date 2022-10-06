@@ -2,8 +2,8 @@
 
 #### Este proyecto fue desarrollado para la entrega final del curso de React.
 
-- E-commerce desarrollado en React.
-- Base de datos almacenada en Firebase.
+-   E-commerce desarrollado en React.
+-   Base de datos almacenada en Firebase.
 
 ## Proyecto deployado
 
@@ -11,13 +11,14 @@
 
 ## Librerías utilizadas:
 
-- `react-router-dom`
-- `firebase`
+-   `react-router-dom`
+-   `firebase`
 
 ## Para levantar el proyecto localmente
 
 ```
 git clone https://github.com/samielee86/almacen-saludable.git
 ```
-- `npm install`
-- `npm start`
+
+-   `npm install`
+-   `npm start`
