@@ -23,11 +23,11 @@ const Footer = () => {
 				</div>
 			</div>
 			<div>
-				<ul className={styles.info}>
-					<li>Nosotros</li>
-					<li>Contacto</li>
-					<li>Términos y condiciones</li>
-				</ul>
+				<div className={styles.info}>
+					<span>Nosotros</span>
+					<span>Contacto</span>
+					<span>Términos y condiciones</span>
+				</div>
 			</div>
 		</div>
 	);
